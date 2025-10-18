@@ -102,7 +102,7 @@ app.post ("/api/poducts", async (req,res) =>{
     try{
         const {nombre, brand, precio, stock, description, image_url } = req.body;
         await pool.query (
-            "INSERT INTO products (name, brand, price, stock, description, image_url) VALUES ($1,$2,$3,$4,$5,$6)",
+            "INSERT INTO products (nombre, brand, precio, stock, description, image_url) VALUES ($1,$2,$3,$4,$5,$6)",
             [nombre, brand, precio, stock, description, image_url ]
         );
         res.json({ message: "Producto agregado correctamente" });
